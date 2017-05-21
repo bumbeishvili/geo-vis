@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Geomapping </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .centered {
+            margin-left: 30%;
+        }
+    </style>
+
+
+</head>
+
+<body translate="no">
+    <h1 style='text-align: center'>მოსახლეობის სიმჭიდროვე რეგიონების მიხედვით <br>  exponent(0.1) scale </h1>
+    <div class="container centered">
+        <div id="myGraph"></div>
+    </div>
+    <script src="d3.v4.min.js"></script>
+    <script src="d3script.js"></script>
+
+    <script>
+        var data =
+            {
+                "Abkhazia": {
+
+                },
+                "Ajaria": {
+                    area: 2900,
+                    population: 337000,
+                },
+                "Ajaria": {
+                    area: 2900,
+                    population: 337000,
+                },
+                "Guria": {
+                    area: 2033.2,
+                    population: 113000,
+                },
+                "Imereti": {
+                    area: 6414.7,
+                    population: 532900,
+                },
+                "Kakheti": {
+                    area: 11375,
+                    population: 318400,
+                },
+                "Kvemo Kartli": {
+                    area: 6436.2,
+                    population: 426400,
+                },
+                "Mtskheta-Mtianeti": {
+                    area: 5606,
+                    population: 94200,
+                },
+                "Racha-Lechkhumi-Kvemo Svaneti": {
+                    area: 4600,
+                    population: 31500,
+                },
+                "Samegrelo-Zemo Svaneti": {
+                    area: 7468.2,
+                    population: 329700,
+                },
+                "Samtskhe-Javakheti": {
+                    area: 6412.8,
+                    population: 160500,
+                },
+                "Shida Kartli": {
+                    area: 3428.3,
+                    population: 263800,
+                },
+                "Tbilisi": {
+                    area: 504.2,
+                    population: 1113000,
+                }
+            }
+
+
+        d3.json('geo_regions.json', function (json) {
+
+
+            var chart = getChart()
+                .width(600)
+                .height(600)
+                .data(data)
+                .geojson(json)
+
+            d3.select("#myGraph")
+                .call(chart);
+        })
+    </script>
+
+
+</body>
+
+</html>
