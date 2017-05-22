@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Geomapping </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    </style>
+
+
+</head>
+
+<body translate="no">
+    <h1 style='text-align: center'>სოფლები </h1>
+    <div class="container centered" style='width:49%;display:inline-block'>
+        <h1 style='text-align: center'>რეგიონ განუსაზღვრელი </h1>
+        <div id="exception"></div>
+    </div>
+    <div class="container centered" style='width:50%;display:inline-block'>
+        <h1 style='text-align: center'>რეგიონ განსაზღვრელი </h1>
+        <div id="proceed"></div>
+    </div>
+
+    <script src="d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-polygon.v1.min.js"></script>
+    <script src="d3script.js"></script>
+
+
+    <script>
+        d3.json('geo_regions.json', function (json) {
+
+            //      d3.json('villages.json', function (exception) {
+
+
+            //     var chart = getChart()
+            //         .geojson(json)
+            //         .villages(exception)
+
+            //     d3.select("#exception")
+            //         .call(chart);
+
+
+            // })
+
+
+            d3.json('exceptions.json', function (exception) {
+
+
+                var chart = getChart()
+                    .geojson(json)
+                    .villages(exception)
+
+                d3.select("#exception")
+                    .call(chart);
+
+
+            })
+
+
+            d3.json('proceed.json', function (proceed) {
+
+
+                var chart = getChart()
+                    .geojson(json)
+                    .villages(proceed)
+
+
+
+                d3.select("#proceed")
+                    .call(chart);
+            })
+
+
+        })
+    </script>
+
+
+</body>
+
+</html>
