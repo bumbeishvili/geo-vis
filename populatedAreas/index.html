@@ -14,14 +14,11 @@
 
 <body translate="no">
     <h1 style='text-align: center'>სოფლები </h1>
+
     <div class="container centered" style='width:49%;display:inline-block'>
-        <h1 style='text-align: center'>რეგიონ განუსაზღვრელი </h1>
-        <div id="exception"></div>
-    </div>
-    <div class="container centered" style='width:50%;display:inline-block'>
-        <h1 style='text-align: center'>რეგიონ განსაზღვრელი </h1>
         <div id="proceed"></div>
     </div>
+   
 
     <script src="d3.v4.min.js"></script>
     <script src="https://d3js.org/d3-polygon.v1.min.js"></script>
@@ -30,34 +27,6 @@
 
     <script>
         d3.json('geo_regions.json', function (json) {
-
-            //      d3.json('villages.json', function (exception) {
-
-
-            //     var chart = getChart()
-            //         .geojson(json)
-            //         .villages(exception)
-
-            //     d3.select("#exception")
-            //         .call(chart);
-
-
-            // })
-
-
-            d3.json('exceptions.json', function (exception) {
-
-
-                var chart = getChart()
-                    .geojson(json)
-                    .villages(exception)
-
-                d3.select("#exception")
-                    .call(chart);
-
-
-            })
-
 
             d3.json('proceed.json', function (proceed) {
 

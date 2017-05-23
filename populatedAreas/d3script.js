@@ -6,7 +6,7 @@
 function getChart(params) {
     // exposed variables
     var attrs = {
-        svgWidth: window.innerWidth / 2,
+        svgWidth: window.innerWidth,
         svgHeight: window.innerHeight,
         marginTop: 5,
         marginBottom: 5,
@@ -140,7 +140,7 @@ function getChart(params) {
                 .attr('stroke', '#2C3E50')
                 .attr('stroke-width', 0.1)
                 .append('title')
-               // .classed("tooltip", true)
+            // .classed("tooltip", true)
             //   .text(d => d.properties.NAME_1 + " " + d.properties.data.populationPerSquareMile.toFixed(2))
 
 
@@ -159,7 +159,7 @@ function getChart(params) {
                 })
                 .append('title')
                 .classed("tooltip", true)
-                .text(d => d.name)
+                .text(d => `${d.nameGe ? d.nameGe : d.name} ${d.subRegionName} ${d.regionName}`)
 
 
             // smoothly handle data updating
