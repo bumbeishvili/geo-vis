@@ -184,10 +184,10 @@ function getChart(params) {
         .enter()
         .append('path')
         .attr('d', path)
-        .attr('fill', d => '#' + (0x1000000 + (Math.random()) * 0xffffff).toString(16).substr(1, 6)) //random color
-        .attr('fill', d => 'yellow')
-        .attr('stroke', '#2C3E50')
-        .attr('stroke-width', 0.1)
+        //.attr('fill', d => '#' + (0x1000000 + (Math.random()) * 0xffffff).toString(16).substr(1, 6)) //random color
+        .attr('fill', d => '#36D7B7')
+        .attr('stroke', '#5e738b')
+        .attr('stroke-width', 0.5)
         .append('title')
       // .classed("tooltip", true)
       //   .text(d => d.properties.NAME_1 + " " + d.properties.data.populationPerSquareMile.toFixed(2))
@@ -271,7 +271,7 @@ function getChart(params) {
            -${length}  -${slope}
     `
           )
-          .attr("fill", "#998095")
+          .attr("fill", "#578ebe")
           .attr("transform", `translate(${x - length},${-height + y - slope})`);
 
 
@@ -285,7 +285,7 @@ function getChart(params) {
 
         rightBars
           .attr("class", "right-bar-side")
-          .attr("fill", "#594a56")
+          .attr("fill", "#22313F")
           .attr(
           "d",
           `
@@ -313,7 +313,7 @@ function getChart(params) {
               l ${length}   ${slope}
               l -${length}  ${slope}`
           )
-          .attr("fill", "#d3b1ce")
+          .attr("fill", "#3598dc")
           .attr("transform", `translate(${x - length},${-height + y - slope})`);
       }
 
