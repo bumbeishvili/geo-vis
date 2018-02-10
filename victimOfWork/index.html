@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Geomapping </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #FAFAFA;
+    }
+  </style>
+
+
+</head>
+
+<body translate="no">
+
+  <div class="container centered">
+    <div id="myGraph"></div>
+  </div>
+  <script src="d3.v4.min.js"></script>
+  <script src="d3script.js"></script>
+
+  <script>
+    var data = {
+      deaths: [
+        {
+          year: 2010,
+          count: 21
+        },
+        {
+          year: 2011,
+          count: 21
+        }, {
+          year: 2012,
+          count: 29
+        }, {
+          year: 2013,
+          count: 30
+        }, {
+          year: 2014,
+          count: 41
+        },
+      ],
+      "Ajaria": {
+        area: 2900,
+        population: 0,
+      },
+      "Ajaria": {
+        area: 2900,
+        population: 0,
+      },
+      "Guria": {
+        area: 2033.2,
+        population: 0,
+      },
+      "Imereti": {
+        area: 6414.7,
+        population: 0,
+      },
+      "Kakheti": {
+        area: 11375,
+        population: 0,
+      },
+      "Kvemo Kartli": {
+        area: 6436.2,
+        population: 0,
+      },
+      "Mtskheta-Mtianeti": {
+        area: 5606,
+        population: 0,
+      },
+      "Racha-Lechkhumi-Kvemo Svaneti": {
+        area: 4600,
+        population: 0,
+      },
+      "Samegrelo-Zemo Svaneti": {
+        area: 7468.2,
+        population: 0,
+      },
+      "Samtskhe-Javakheti": {
+        area: 6412.8,
+        population: 0,
+      },
+      "Shida Kartli": {
+        area: 3428.3,
+        population: 0,
+      },
+      "Tbilisi": {
+        area: 504.2,
+        population: 100,
+      }, "Abkhazia": {
+
+      },
+    }
+
+
+
+    d3.json('geo_regions.json', function (json) {
+
+
+      var chart = getChart()
+        .svgWidth(window.innerWidth)
+        .svgHeight(window.innerHeight)
+        .data(data)
+        .geojson(json)
+
+      d3.select("#myGraph")
+        .call(chart);
+    })
+  </script>
+
+
+</body>
+
+</html>
